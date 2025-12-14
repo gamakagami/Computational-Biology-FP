@@ -4,25 +4,55 @@ st.header("QSAR-Based pIC50 Prediction Dashboard")
 st.markdown("Computational Biology Final Project")
 st.markdown("Members: Albertus Santoso, Gabriel Anderson & Rafael Anderson")
 
+# -----------------------------
+# INTRODUCTION
+# -----------------------------
+st.subheader("Why This Project Matters")
+st.markdown("""
+Modern drug discovery faces a fundamental challenge: **how do we identify promising compounds quickly, accurately, and at scale?**  
+Traditional wet-lab experiments, while essential, are **slow, costly, and resource-intensive**. As chemical libraries grow into the millions, computational tools become indispensable.
+
+This dashboard demonstrates how **machine learning and cheminformatics** can accelerate early‑stage drug discovery by predicting compound potency directly from molecular structure.
+""")
+
+# -----------------------------
+# PROJECT OVERVIEW
+# -----------------------------
 st.subheader("Project Overview")
 st.markdown("""
-Drug discovery is an expensive and time consuming process, where it requires years of time to identify promising drug candidates. One of the most important features of a compound's effectiveness is its potency, which is commonly measured in IC50. IC50 represents the concentration of a substance that is able to inhibit a biological process by 50%.
-
-This project is a Machine Learning QSAR (Quantitative Structure-Activity Relationship) model that predicts pIC50 values from molecular structures.
+This project focuses on predicting **pIC50**, a logarithmic measure of compound potency derived from IC50 values.  
+Using a combination of **molecular descriptors**, **SMILES-based features**, and **machine learning models**, we build a QSAR (Quantitative Structure–Activity Relationship) system capable of estimating biological activity without laboratory experiments.
 """)
 
+# -----------------------------
+# PROBLEM STATEMENT
+# -----------------------------
 st.subheader("Problem Statement")
 st.markdown("""
-- Experimental IC50 measurements are expensive and slow
-- IC50 values span several orders of magnitude and are non-linear
-- Manual screening of thousands of compounds is impractical
+- Experimental IC50 measurements are expensive and slow  
+- IC50 values span several orders of magnitude and are non-linear  
+- Manual screening of thousands of compounds is impractical  
+- Early-stage filtering requires fast, scalable computational tools  
 """)
 
+# -----------------------------
+# PROJECT GOAL
+# -----------------------------
 st.subheader("Project Goal")
 st.markdown("""
-To develop a robust regression model capable of accurately predicting: pIC50 = -log10(IC50 in M) by using molecular features already provided in the dataset along with molecular descriptors derived from the smiles string.
+To develop a robust regression model capable of accurately predicting:
+
+**pIC50 = -log10(IC50 in M)**
+
+using:
+- Molecular features from the dataset  
+- RDKit-generated molecular descriptors  
+- Machine learning models optimized for QSAR tasks  
 """)
 
+# -----------------------------
+# METHODOLOGY
+# -----------------------------
 st.subheader("Methodology")
 st.markdown("""
 1. Data Preparation
@@ -40,4 +70,47 @@ st.markdown("""
 3. Model Evaluation
     - Model performance is assessed using the following metrics: R² score, Mean Squared Error (MSE), and Mean Absolute Error (MAE).
     - Predictions are visualized to analyze the accuracy and reliability of the models.
+""")
+
+# -----------------------------
+# NEW SECTION: WHAT THIS DASHBOARD OFFERS
+# -----------------------------
+st.subheader("What You Can Do in This Dashboard")
+st.markdown("""
+This interactive dashboard allows you to:
+
+✅ Explore how molecular data is processed  
+✅ Understand how descriptors are generated  
+✅ Compare machine learning models  
+✅ Visualize prediction performance  
+✅ Learn how QSAR models support drug discovery  
+
+Each page in the sidebar walks you through a different stage of the pipeline.
+""")
+
+# -----------------------------
+# NEW SECTION: IMPACT & APPLICATIONS
+# -----------------------------
+st.subheader("Real-World Applications")
+st.markdown("""
+QSAR-based pIC50 prediction is widely used in:
+
+- **Virtual screening** of large chemical libraries  
+- **Lead optimization** in medicinal chemistry  
+- **Toxicity and ADMET prediction**  
+- **Reducing experimental workload** in early drug discovery  
+
+By predicting potency computationally, researchers can focus lab resources on the most promising candidates.
+""")
+
+# -----------------------------
+# NEW SECTION: HOW TO NAVIGATE
+# -----------------------------
+st.subheader("How to Navigate This Dashboard")
+st.markdown("""
+- **Home Page** — Overview of the project and its importance  
+- **Data Preparation Page** — How raw data becomes ML-ready  
+- **Model Evaluation Page** — Performance metrics and visualizations  
+
+Use the sidebar to move between sections.
 """)
