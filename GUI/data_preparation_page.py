@@ -61,8 +61,22 @@ st.markdown("""
     smiles_into_attributes = smiles_arr_df['Converted Smiles'].apply(pd.Series).add_prefix('converted_smile_')
 """)
 
-st.markdown("8. Lastly, the descriptors df are combines with the original dataframe:")
+st.markdown("8. Combine th descriptors df with the original dataframe:")
 st.markdown("""
     ```python
     combined_data = pd.concat([smiles_arr_df, smiles_into_attributes], axis=1)
+""")
+
+st.markdown("9. Remove non numerical unused attributes to produce a df ready for machine learning:")
+st.markdown("""
+    ```python
+    machine_learning_df = combined_data.drop(columns=["Molecule ChEMBL ID", "Molecule Name", "Molecule Max Phase", "#RO5 Violations", 
+                                                    "Compound Key", "Smiles", "Standard Type", "Standard Relation", "Standard Value", "Standard Units", 
+                                                    "pChEMBL Value", "Data Validity Comment", "Comment", "Uo Units", "Ligand Efficiency BEI", "Ligand Efficiency LE",
+                                                    "Ligand Efficiency LLE", "Ligand Efficiency SEI", "Potential Duplicate", "Assay ChEMBL ID", "Assay Description",
+                                                    "Assay Type", "BAO Format ID", "BAO Label", "Assay Organism", "Assay Tissue ChEMBL ID", "Assay Tissue Name",	
+                                                    "Assay Cell Type", "Assay Subcellular Fraction", "Assay Parameters", "Assay Variant Accession", 
+                                                    "Assay Variant Mutation", "Target ChEMBL ID", "Target Name", "Target Organism", "Target Type", "Document ChEMBL ID",
+                                                    "Source ID", "Source Description", "Document Journal", "Document Year", "Cell ChEMBL ID", "Properties", "Action Type",
+                                                    "Standard Text Value", "Value", "IC50_m", "Converted Smiles"])
 """)
