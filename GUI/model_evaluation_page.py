@@ -48,7 +48,6 @@ xgb_data = {
 }
 
 st.dataframe(xgb_data, height=457)
-
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("#### 2. **Random Forest Regressor Results**")
@@ -97,6 +96,7 @@ rf_data = {
 }
 
 st.dataframe(rf_data, height=352)
+st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("#### 3. **Catboost Regressor Results**")
 
@@ -144,3 +144,51 @@ cat_data = {
 }
 
 st.dataframe(cat_data, height=457)
+st.markdown("<br>", unsafe_allow_html=True)
+
+st.markdown("#### 4. **ANN Results**")
+
+ann_data = {
+    "Applicability Domain": [
+        "None", "TopKatApplicabilityDomain", "KNNApplicabilityDomain",
+        "None", "TopKatApplicabilityDomain", "KNNApplicabilityDomain",
+        "None", "TopKatApplicabilityDomain", "KNNApplicabilityDomain"
+    ],
+    "Train R2": [
+        0.770, 0.758, 0.772,
+        0.743, 0.731, 0.745,
+        0.723, 0.713, 0.727
+    ],
+    "Train MSE": [
+        0.309, 0.307, 0.312,
+        0.300, 0.302, 0.303,
+        0.315, 0.315, 0.316
+    ],
+    "Train MAE": [
+        0.403, 0.404, 0.405,
+        0.399, 0.401, 0.401,
+        0.415, 0.417, 0.415
+    ],
+    "Test R2": [
+        0.653, 0.653, 0.656,
+        0.622, 0.621, 0.625,
+        0.618, 0.614, 0.621
+    ],
+    "Test MSE": [
+        0.451, 0.427, 0.462,
+        0.491, 0.435, 0.503,
+        0.497, 0.443, 0.510
+    ],
+    "Test MAE": [
+        0.483, 0.471, 0.488,
+        0.502, 0.477, 0.506,
+        0.514, 0.493, 0.520
+    ],
+    "Filter": [
+        "None", "None", "None",
+        "Z_Score Outliers Removal", "Z_Score Outliers Removal", "Z_Score Outliers Removal",
+        "IQR Outliers Removal", "IQR Outliers Removal", "IQR Outliers Removal"
+    ]
+}
+
+st.dataframe(ann_data, height=352)
