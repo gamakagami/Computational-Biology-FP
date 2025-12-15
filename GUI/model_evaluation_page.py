@@ -4,6 +4,27 @@ st.header("Model Evaluation")
 
 st.markdown("#### 1. **XGBRegressor Results**")
 
+st.markdown("Optimal configuration used:")
+st.markdown("""
+    ```python
+    final_xgb = XGBRegressor(
+        subsample=0.7, 
+        reg_lambda=1.5, 
+        reg_alpha=0.5, 
+        n_estimators=400, 
+        min_child_weight=7, 
+        max_depth=5, 
+        learning_rate=0.05, 
+        gamma=0.1, 
+        colsample_bytree=0.7, 
+        random_state=42, 
+        n_jobs=-1, 
+        tree_method="hist", 
+        eval_metric="rmse"
+    )
+    n_features_used = 32
+""")
+
 xgb_data = {
     "Applicability Domain": [
         "None", "LeverageApplicabilityDomain", "TopKatApplicabilityDomain", "KNNApplicabilityDomain",
@@ -47,10 +68,28 @@ xgb_data = {
     ]
 }
 
+st.markdown("Training and testing results:")
+
 st.dataframe(xgb_data, height=457)
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("#### 2. **Random Forest Regressor Results**")
+
+st.markdown("Optimal configuration used:")
+st.markdown("""
+    ```python
+    final_rf = RandomForestRegressor(
+        n_estimators=200, 
+        min_samples_split=10, 
+        min_samples_leaf=2, 
+        max_features=0.6, 
+        max_depth=None, 
+        bootstrap=True, 
+        random_state=42, 
+        n_jobs=-1
+    )
+    n_features_used = 202
+""")
 
 rf_data = {
     "Applicability Domain": [
@@ -95,10 +134,29 @@ rf_data = {
     ]
 }
 
+st.markdown("Training and testing results:")
+
 st.dataframe(rf_data, height=352)
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("#### 3. **Catboost Regressor Results**")
+
+st.markdown("Optimal configuration used:")
+st.markdown("""
+    ```python
+    final_catboost = CatBoostRegressor(
+        learning_rate=0.05, 
+        l2_leaf_reg=5, 
+        iterations=600, 
+        depth=7, 
+        border_count=254, 
+        bagging_temperature=0, 
+        verbose=0
+    )
+    n_features_used = 167
+""")
+
+st.markdown("Training and testing results:")
 
 cat_data = {
     "Applicability Domain": [
@@ -147,6 +205,21 @@ st.dataframe(cat_data, height=457)
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("#### 4. **ANN Results**")
+
+st.markdown("Optimal configuration used:")
+st.markdown("""
+    ```python
+    optimal_configuration = {
+        neurons1=256, 
+        neurons2=128, 
+        neurons3=64, 
+        learning_rate=0.0001, dropout_rate=0.0, 
+        epochs=100, 
+        batch_size=32
+    }        
+    n_features_used = 202
+""")
+st.markdown("Training and testing results:")
 
 ann_data = {
     "Applicability Domain": [
