@@ -44,8 +44,7 @@ This interactive dashboard allows you to:
 
 ✅ Explore how molecular data is processed  
 ✅ Understand how descriptors are generated  
-✅ Compare machine learning models  
-✅ Visualize prediction performance  
+✅ Compare machine learning models   
 ✅ Learn how QSAR models support drug discovery  
 
 Each page in the sidebar walks you through a different stage of the pipeline.
