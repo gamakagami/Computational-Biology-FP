@@ -66,7 +66,9 @@ st.markdown("#### 7. **How to Navigate This Dashboard**")
 st.markdown("""
 - **Home Page** — Overview of the project and its importance  
 - **Data Preparation Page** — How raw data becomes ML-ready  
+- **Model Training and Testing Page** — Machine learning model training, optimization, and evaluation workflow
 - **Model Evaluation Page** — Performance metrics and visualizations  
 
 Use the sidebar to move between sections.
 """)
+
